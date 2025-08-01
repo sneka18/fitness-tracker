@@ -1,0 +1,64 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitTrack - Fitness Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>FitTrack</h1>
+    <p>Your All-in-One Fitness Tracker</p>
+  </header>
+  <nav>
+    <a href="#track">Track</a>
+    <a href="#goals">Goals</a>
+    <a href="#diet">Diet</a>
+    <a href="#summary">Summary</a>
+  </nav>
+
+  <div class="container">
+    <section id="track">
+      <h2>Track Your Activity</h2>
+      <div>
+        <h3>Workout Log</h3>
+        <input type="text" id="workoutType" placeholder="e.g. Running, Yoga">
+        <input type="number" id="duration" placeholder="Duration (minutes)">
+        <button onclick="addWorkout()">Add Workout</button>
+      </div>
+      <div>
+        <h3>Water Intake</h3>
+        <input type="number" id="waterGlasses" placeholder="Glasses of Water">
+        <button onclick="logWater()">Log Water</button>
+        <p>Total Water: <span id="totalWater">0</span> Glasses</p>
+      </div>
+    </section>
+
+    <section id="goals">
+      <h2>Set Your Fitness Goals</h2>
+      <input type="number" id="weightGoal" placeholder="Weight Goal (kg)">
+      <input type="number" id="stepsGoal" placeholder="Steps Per Day">
+      <button onclick="saveGoals()">Save Goals</button>
+    </section>
+
+    <section id="diet">
+      <h2>Calorie Tracker</h2>
+      <input type="text" id="foodItem" placeholder="Food Item">
+      <input type="number" id="calories" placeholder="Calories">
+      <button onclick="addCalories()">Add</button>
+      <p>Total Calories: <span id="totalCalories">0</span> kcal</p>
+    </section>
+
+    <section id="summary">
+      <h2>Progress Summary</h2>
+      <canvas id="progressChart" width="400" height="200"></canvas>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
